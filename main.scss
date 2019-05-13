@@ -1,0 +1,47 @@
+$size: 50px;
+$days: (mon, tue, wed, thu, fri, sat, sun);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(7, $size);
+  counter-reset: selection;
+  div {
+    border: 1px solid;
+    text-align: center;
+    line-height: $size;
+    height: $size;
+    font-size: 30px;
+    transition: .3s;
+    background-color: #fff;
+    &:after {
+      counter-increment: selection;
+      content: counter(selection);
+    }
+    &:hover {
+      background-color: aqua;
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@for $i from 28 through 31 {
+  .calendar-#{$i} div:nth-child(n + #{$i + 1}){
+    display: none;
+  }
+}
+
+@each $i in $days {
+  .calendar-#{$i} div:first-child {
+    grid-column-start: index($days, $i);
+  }
+}

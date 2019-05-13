@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(7, 50px);
+  counter-reset: selection;
+}
+.calendar div {
+  border: 1px solid;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  font-size: 30px;
+  transition: 0.3s;
+  background-color: #fff;
+}
+.calendar div:after {
+  counter-increment: selection;
+  content: counter(selection);
+}
+.calendar div:hover {
+  background-color: aqua;
+  transform: translateY(-20px);
+}
+
+.calendar-28 div:nth-child(n+29) {
+  display: none;
+}
+
+.calendar-29 div:nth-child(n+30) {
+  display: none;
+}
+
+.calendar-30 div:nth-child(n+31) {
+  display: none;
+}
+
+.calendar-31 div:nth-child(n+32) {
+  display: none;
+}
+
+.calendar-mon div:first-child {
+  grid-column-start: 1;
+}
+
+.calendar-tue div:first-child {
+  grid-column-start: 2;
+}
+
+.calendar-wed div:first-child {
+  grid-column-start: 3;
+}
+
+.calendar-thu div:first-child {
+  grid-column-start: 4;
+}
+
+.calendar-fri div:first-child {
+  grid-column-start: 5;
+}
+
+.calendar-sat div:first-child {
+  grid-column-start: 6;
+}
+
+.calendar-sun div:first-child {
+  grid-column-start: 7;
+}
+
+/*# sourceMappingURL=main.css.map */
