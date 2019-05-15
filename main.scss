@@ -1,4 +1,4 @@
-$size: 50px;
+$size: 100px;
 $days: (mon, tue, wed, thu, fri, sat, sun);
 
 * {
@@ -8,6 +8,7 @@ $days: (mon, tue, wed, thu, fri, sat, sun);
 body {
   display: flex;
   justify-content: center;
+  font-family: 'Arial';
 }
 
 .calendar {
@@ -28,7 +29,7 @@ body {
       content: counter(selection);
     }
     &:hover {
-      background-color: aqua;
+      background-color: pink;
       transform: translateY(-20px);
     }
   }
